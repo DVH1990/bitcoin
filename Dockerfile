@@ -18,10 +18,3 @@ RUN apk add libevent-dev
 RUN apk add build-base
 
 RUN git clone https://github.com/DVH1990/refnet.git
-
-RUN cd refnet && git pull origin yehuda_new
-
-RUN cd refnet && ./autogen.sh
-RUN cd refnet && ./configure --disable-tests --disable-bench --disable-static --without-gui --disable-zmq --with-incompatible-bdb  CFLAGS='-w' CXXFLAGS='-w'
-RUN cd refnet && make
-RUN cd refnet && make install
